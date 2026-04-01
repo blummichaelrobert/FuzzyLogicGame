@@ -6,6 +6,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>BiodomeAres1</RootNamespace>
-    <AssemblyName>BiodomeAres1</AssemblyName>
+    <AssemblyName>FuzzyLogicGame</AssemblyName>
   </PropertyGroup>
 </Project>

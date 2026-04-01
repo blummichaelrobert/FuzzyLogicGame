@@ -101,6 +101,17 @@ namespace BiodomeAres1.Engine
             PowerModifier:    0.65,
             SensorGlitch:     false
         );
+
+        public static readonly EventDefinition SensorDegradation = new(
+            Name:             "Sensor Degradation",
+            FlavorText:       "Instrument array compromised. " +
+                              "Readings unreliable.",
+            DurationTicks:    4,
+            TempModifier:     5.0,
+            HumidityModifier: 8.0,
+            PowerModifier:    1.0,
+            SensorGlitch:     true   // readings flicker on display
+        );
     }
     
     // ── Level Schedules ──────────────────────────────────────

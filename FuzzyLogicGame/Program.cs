@@ -302,27 +302,3 @@ var loop = new GameLoop(config, state, renderer);
  
 // ── Start ────────────────────────────────────────────────────
 loop.Run();
-
-// ============================================================
-//  NullRenderer
-//  Placeholder renderer — does nothing, compiles cleanly.
-//  Replace with ConsoleRenderer once Layer 3 is built.
-// ============================================================
-namespace BiodomeAres1.Rendering
-{
-    public class NullRenderer : IRenderer
-    {
-        public void Initialise() { }
-        public void Teardown()   { }
-        public void Render(Engine.GameSnapshot snapshot)
-        {
-            // Uncomment to verify engine output during development:
-            // Console.WriteLine(
-            //     $"Tick {snapshot.CurrentTick} | " +
-            //     $"Stress {snapshot.FuzzyResult?.SystemStress:F2} | " +
-            //     $"Crew {snapshot.CrewHealth:F1}% | " +
-            //     $"Eco {snapshot.EcosystemIntegrity:F1}% | " +
-            //     $"Dome {snapshot.DomeIntegrity:F1}%");
-        }
-    }
-}
