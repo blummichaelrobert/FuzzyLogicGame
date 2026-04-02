@@ -96,21 +96,33 @@ namespace BiodomeAres1.Rendering
             string eventTag = snap.EventName != null
                 ? TruncateCentre(snap.EventName, 14)
                 : "  STORM  ";
- 
-            return new[]
+
+            try 
             {
-                $" {p1[..32]} ",
-                $" {p2[..32]} ",
-                $"  {p3[..8]}╔══════════════╗{p3[..8]}  ",
-                $"  {p3[..6]}╔╝{Pad(14)}╚╗{p3[..6]}  ",
-                $"  {p1[..4]}╔╝  ARES - 1    ╚╗{p1[..4]}  ",
-                $"  {p2[..3]}║  {eventTag,-14}  ║{p2[..3]}  ",
-                $"  {p1[..4]}╚╗               ╔╝{p1[..4]}  ",
-                $"  {p3[..6]}╚═══════════════╝{p3[..6]}  ",
-                heavy
-                    ? "  ≋ ≋ ≋ ≋ DUST STORM ≋ ≋ ≋ ≋  "
-                    : "  ≈ ≈ ≈ ≈ M A R S ≈ ≈ ≈ ≈ ≈  ",
-            };
+                return new[]
+                {
+                    $" {p1[..32]} ",
+                    $" {p2[..32]} ",
+                    $"  {p3[..8]}╔══════════════╗{p3[..8]}  ",
+                    $"  {p3[..6]}╔╝{Pad(14)}╚╗{p3[..6]}  ",
+                    $"  {p1[..4]}╔╝  ARES - 1    ╚╗{p1[..4]}  ",
+                    $"  {p2[..3]}║  {eventTag,-14}  ║{p2[..3]}  ",
+                    $"  {p1[..4]}╚╗               ╔╝{p1[..4]}  ",
+                    $"  {p3[..6]}╚═══════════════╝{p3[..6]}  ",
+                    heavy
+                        ? "  ≋ ≋ ≋ ≋ DUST STORM ≋ ≋ ≋ ≋  "
+                        : "  ≈ ≈ ≈ ≈ M A R S ≈ ≈ ≈ ≈ ≈  ",
+                };
+            }
+            catch (Exception ex) 
+            {
+                // Handle the general exception
+                Console.WriteLine($"Error: {ex.Message}");
+                string[] test = new string[1];
+                return test;
+            }
+            
+            
         }
 
         // ── CRACKING ─────────────────────────────────────────

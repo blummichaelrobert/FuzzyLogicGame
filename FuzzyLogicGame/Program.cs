@@ -296,7 +296,7 @@ using BiodomeAres1.Rendering;
 // ── Wire dependencies ────────────────────────────────────────
 var config   = new GameConfig();    // all tunable constants
 var state    = new GameState();     // live mutable game data
-var renderer = new NullRenderer();  // swap for ConsoleRenderer in Layer 3
+var renderer = new ConsoleRenderer();  // swap for ConsoleRenderer in Layer 3
  
 var loop = new GameLoop(config, state, renderer);
  
